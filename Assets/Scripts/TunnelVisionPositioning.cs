@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class TunnelVisionPositioning : MonoBehaviour {
 
+	private float distanceFromEye;
+
 	// Use this for initialization
 	void Start () {
+		this.distanceFromEye = 8.0f;
 	}
 
 	// Update is called once per frame
@@ -17,17 +20,17 @@ public class TunnelVisionPositioning : MonoBehaviour {
 		{
 		case Fove.EFVR_Eye.Neither:
 
-			transform.position = eyes.left.GetPoint(3.0f) + ((eyes.right.GetPoint(3.0f) - eyes.left.GetPoint(3.0f)) / 2);
+			transform.position = eyes.left.GetPoint(this.distanceFromEye) + ((eyes.right.GetPoint(this.distanceFromEye) - eyes.left.GetPoint(this.distanceFromEye)) / 2);
 			break;
 
 		case Fove.EFVR_Eye.Left:
 
-			transform.position = eyes.right.GetPoint(3.0f);
+			transform.position = eyes.right.GetPoint(this.distanceFromEye);
 			break;
 
 		case Fove.EFVR_Eye.Right:  
 
-			transform.position = eyes.left.GetPoint(3.0f);
+			transform.position = eyes.left.GetPoint(this.distanceFromEye);
 			break;
 
 		}
