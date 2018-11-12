@@ -8,7 +8,7 @@ public class TunnelVisionPositioning : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.distanceFromEye = 8.0f;
+		this.distanceFromEye = 3.0f;
 	}
 
 	// Update is called once per frame
